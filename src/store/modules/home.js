@@ -3,11 +3,11 @@ import { createSlice } from '@reduxjs/toolkit'
 const homeReducer = createSlice({
   name:'home',
   initialState:{
-    highScroeRoom:{}
+    highScoreRoom:{}
   },
   reducers:{
     changeRoomsAction(state,action){
-      state.highScroeRoom = action.payload
+      state.highScoreRoom = action.payload
     }
   }
 })
