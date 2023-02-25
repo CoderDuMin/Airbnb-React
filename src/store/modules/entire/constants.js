@@ -1,0 +1,1 @@
+export const CHANGE_ENTIRE_TYPE = 'change_entire_type'
