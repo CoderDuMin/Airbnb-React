@@ -2,7 +2,6 @@ import dmRequest from '@/service'
 import { changeRoomsAction } from '@/store/modules/home'
 import React, { memo, useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
-import './style.less'
 
 const Home = memo(() => {
 
@@ -30,7 +29,7 @@ const Home = memo(() => {
         highScoreRoom?.list?.map(item => {
          return (
           <div className='item' key={item.id}>
-            <img src={item.picture_url} alt="" style={{width:'100px',height:'100px'}} />
+            {/* <img src={item.picture_url} alt="" style={{width:'100px',height:'100px'}} /> */}
             <div>{item.name}</div>
           </div>
          )
