@@ -1,0 +1,26 @@
+import React, { memo } from 'react'
+import PropTypes from 'prop-types'
+import { SectionFotterWrapper } from './style'
+import IconMoreArrow from '@/assets/svg/icon-more-arrow'
+
+const SectionFooter = memo(function SectionFooter(props) {
+  const {name=''} = props
+  let showName = '查看全部'
+  if(name){
+    showName = `查看更多${name}房源`
+  }
+  return (
+    <SectionFotterWrapper color={name ? '#00848A' : '#000'}>
+      <div className="info">
+        <span className='text'>{showName}</span>
+        <IconMoreArrow/>
+      </div>
+    </SectionFotterWrapper>
+  )
+})
+
+SectionFooter.propTypes = {
+  name:PropTypes.string
+}
+
+export default SectionFooter
