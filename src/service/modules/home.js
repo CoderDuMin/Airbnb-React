@@ -15,3 +15,11 @@ export function getDiscountInfo(){
 export function getRecommendInfo(){
   return dmRequest.get({url:'/home/hotrecommenddest'})
 }
+
+export function getLongforInfo(){
+  return dmRequest.get({url:'/home/longfor'})
+}
+
+export function getPlusInfo(){
+  return dmRequest.get({url:'/home/plus'})
+}

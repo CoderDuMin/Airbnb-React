@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { HomeSectionV2Wrapper } from './style'
 import SectionHeader from '@/components/section-header'
 import SectionRooms from '@/components/section-rooms'
-import { useSelector } from 'react-redux'
 import SectionTabs from '@/components/section-tab'
 import SectionFooter from '@/components/section-footer'
 
