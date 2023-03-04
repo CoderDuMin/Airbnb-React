@@ -18,7 +18,8 @@ const RoomItem = memo(function RoomItem(props) {
   // 轮播图逻辑
   const sliderRef = useRef()
   const [selectedIndex,setSelectedIndex] = useState(0)
-  const controlClickHandle = (isRight=true) => {
+  const controlClickHandle = (e,isRight=true) => {
+      e.stopPropagation()
      // 上一个面板/下一个面板
      isRight ? sliderRef.current.next(): sliderRef.current.prev()
 
@@ -38,10 +39,10 @@ const RoomItem = memo(function RoomItem(props) {
   const sliderElement = (
     <div className="slider">
       <div className='control'>
-        <div className='btn left' onClick={e => controlClickHandle(false)}>
+        <div className='btn left' onClick={e => controlClickHandle(e,false)}>
           <IconArrowLeft width="30" height="30"/>
         </div>
-        <div className='btn right' onClick={e => controlClickHandle(true)}>
+        <div className='btn right' onClick={e => controlClickHandle(e,true)}>
           <IconArrowRight width="30" height="30"/>
         </div>
       </div>

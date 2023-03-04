@@ -8,7 +8,6 @@ import RoomItem from '@/components/room-item'
 
 const HomeSectionV3 = memo(function(props) {
   const {plusInfo} = props
-  console.log(plusInfo)
   return (
     <HomeSectionV3Wrapper>
       <SectionHeader title={plusInfo?.title} subTitle={plusInfo?.subtitle} />
