@@ -1,10 +1,19 @@
 import RoomItem from '@/components/room-item'
+import { changeDetailInfoAction } from '@/store/modules/detail'
 import PropTypes from 'prop-types'
-import React, { memo } from 'react'
+import React, { memo,useCallback } from 'react'
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import { EntireRoomsWrapper } from './style'
 
 const EntireRooms = memo((props) => {
   const {roomList=[],isLoading=false,totalCount=0} = props
+  const navgator = useNavigate()
+  const dispatch = useDispatch()
+  const navToDetail = useCallback((item) => {
+      dispatch(changeDetailInfoAction(item))
+      navgator('/detail')
+    },[dispatch,navgator],)
   
   return (
     <EntireRoomsWrapper>
@@ -13,7 +22,7 @@ const EntireRooms = memo((props) => {
       {
         !!roomList.length && roomList.map(room => {
           return (
-            <RoomItem itemData={room} key={room._id} roomWidth='20%' />
+            <RoomItem itemData={room} key={room._id} roomWidth='20%' itemClick={navToDetail} />
           )
         })
       }

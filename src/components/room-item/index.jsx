@@ -9,8 +9,13 @@ import Indicator from '@/base-ui/indicator'
 import classNames from 'classnames'
 
 const RoomItem = memo(function RoomItem(props) {
-  const { itemData,roomWidth } = props
+  const { itemData,roomWidth,itemClick } = props
 
+  // 跳转详情页
+  const handleItemClick = () => {
+    itemClick && itemClick(itemData)
+  }
+  // 轮播图逻辑
   const sliderRef = useRef()
   const [selectedIndex,setSelectedIndex] = useState(0)
   const controlClickHandle = (isRight=true) => {
@@ -68,7 +73,7 @@ const RoomItem = memo(function RoomItem(props) {
   )
 
   return (
-    <RoomItemWrapper verifyColor={itemData?.verify_info?.text_color || '#39576a'} roomWidth={roomWidth}>
+    <RoomItemWrapper verifyColor={itemData?.verify_info?.text_color || '#39576a'} roomWidth={roomWidth} onClick={handleItemClick}>
       <div className="inner">
         { !itemData.picture_urls ? pictureElement : sliderElement}
         <div className="desc">
