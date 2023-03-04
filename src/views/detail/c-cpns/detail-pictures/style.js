@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 export const PicturesWrapper = styled.div`
+position: relative;
   > .pictures {
     display: flex;
     height: 600px;
@@ -68,5 +69,18 @@ export const PicturesWrapper = styled.div`
       box-sizing: border-box;
       border: 1px solid #000;
     }
+  }
+
+  .show-btn{
+    position: absolute;
+    padding: 12px 16px;
+    bottom: 20px;
+    right:30px;
+    background-color: #fff;
+    color:#666;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
   }
 `

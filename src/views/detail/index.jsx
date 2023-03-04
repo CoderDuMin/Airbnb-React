@@ -1,4 +1,5 @@
-import React, { memo } from 'react'
+import PictureBrowser from '@/base-ui/picture-browser'
+import React, { memo,useState } from 'react'
 import { useSelector } from 'react-redux'
 import DetailInfo from './c-cpns/detail-info'
 import DetailPictures from './c-cpns/detail-pictures'
