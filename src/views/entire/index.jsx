@@ -1,18 +1,28 @@
 import React, { memo,useEffect } from 'react'
-import { useDispatch } from  'react-redux'
-import { changeEntireTypeAction } from '@/store/modules/entire/actionCreator'
+import { shallowEqual, useDispatch, useSelector } from  'react-redux'
 import { EntireWrapper } from './style'
+import EntireFilter from './c-cpns/entire-filter'
+import EntireRooms from './c-cpns/entire-rooms'
+import EntirePagenav from './c-cpns/entire-pagenav'
+import { fetchEntireRoomsAction } from '@/store/modules/entire'
 
 const Entire = memo(() => {
+  const {totalCount=0,roomList=[],isLoading=false,currentPage=0} = useSelector((state)=>({
+    totalCount:state.entire.totalCount,
+    roomList:state.entire.roomList,
+    isLoading:state.entire.isLoading,
+    currentPage:state.entire.currentPage
+  }),shallowEqual)
+
   const dispatch = useDispatch()
   useEffect(()=>{
-    dispatch(changeEntireTypeAction(['类型1','类型2']))
+    dispatch(fetchEntireRoomsAction(0))
   },[dispatch])
   return (
     <EntireWrapper>
-      <div>searchbar</div>
-      <div>filterlist</div>
-      <div>roomslist</div>
+      <EntireFilter />
+      <EntireRooms roomList={roomList} isLoading={isLoading} totalCount={totalCount} />
+      <EntirePagenav totalCount={totalCount} currentPage={currentPage} />
     </EntireWrapper>
   )
 })

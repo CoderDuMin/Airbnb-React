@@ -6,7 +6,8 @@ export const HeadLeftWrapper = styled.div`
 
   display: flex;
   align-items: center;
-
+  cursor: pointer;
+  user-select: none;
   img{
     margin-left: 5px;
     width: 162px;

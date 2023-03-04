@@ -14,9 +14,6 @@ const ScrollView = memo((props) => {
     let scrollWidth = contentRef.current.scrollWidth
     let clientWidth = contentRef.current.clientWidth
     totalDistance.current = scrollWidth - clientWidth
-    console.log('scrollWidth',scrollWidth)
-    console.log('clientWidth',clientWidth)
-    console.log('totalDistance',totalDistance.current)
     if(totalDistance.current > 0){
       setShowRight(true)
     }
@@ -26,7 +23,6 @@ const ScrollView = memo((props) => {
     const newIndex = posIndex + (isRight ? 1 : -1)
     let nowEl = contentRef.current.children[newIndex]
     let offsetLeft = nowEl.offsetLeft
-    console.log('offsetLeft',offsetLeft,nowEl)
     contentRef.current.style.transform = `translateX(-${offsetLeft}px)`
     setPosIndex(newIndex)
     setShowLeft(offsetLeft > 0)
