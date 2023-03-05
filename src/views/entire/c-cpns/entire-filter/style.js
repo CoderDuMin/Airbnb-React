@@ -8,6 +8,12 @@ export const EntireFilterWrapper = styled.div`
   border-bottom: 1px solid #f2f2f2;
   background-color: #fff;
 
+  position: fixed;
+  top:80px;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  
   .filter {
     display: flex;
 

@@ -7,7 +7,7 @@ const DetailInfo = memo((props) => {
   console.log('detailINfo',detailInfo)
   return (
     <DetailInfoWrapper>
-      <img src={require('@/assets/img/info-cover.png')} />
+      <img src={require('@/assets/img/info-cover.png')} alt="" />
     </DetailInfoWrapper>
   )
 })

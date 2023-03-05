@@ -5,6 +5,7 @@ import EntireFilter from './c-cpns/entire-filter'
 import EntireRooms from './c-cpns/entire-rooms'
 import EntirePagenav from './c-cpns/entire-pagenav'
 import { fetchEntireRoomsAction } from '@/store/modules/entire'
+import { changeHeaderConfigAction } from '@/store/modules/main'
 
 const Entire = memo(() => {
   const {totalCount=0,roomList=[],isLoading=false,currentPage=0} = useSelector((state)=>({
@@ -16,6 +17,7 @@ const Entire = memo(() => {
 
   const dispatch = useDispatch()
   useEffect(()=>{
+    dispatch(changeHeaderConfigAction({isFixed:true}))
     dispatch(fetchEntireRoomsAction(0))
   },[dispatch])
   return (

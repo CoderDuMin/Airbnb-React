@@ -9,7 +9,7 @@ import Indicator from '../indicator'
 import { PictureBrowserWrapper } from './style'
 
 const PictureBrowser = memo((props) => {
-  const { close,pictureUrls=[] } = props
+  const { close,pictureUrls=[],showIndex=0 } = props
   useEffect(()=>{
     document.body.style.overflow = 'hidden'
     return () => {
@@ -22,7 +22,7 @@ const PictureBrowser = memo((props) => {
   }
 
   const [isNext,setIsNext] = useState(true)
-  const [currentIndex,setCurrentIndex] = useState(0)
+  const [currentIndex,setCurrentIndex] = useState(showIndex)
   const controlClickHandle = (next) => {
     let newIndex = currentIndex
     if(next){
@@ -39,7 +39,6 @@ const PictureBrowser = memo((props) => {
         newIndex = pictureUrls.length -1
       }
       else{
-
         newIndex--
       }
     }
