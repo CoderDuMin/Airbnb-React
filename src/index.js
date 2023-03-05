@@ -13,10 +13,10 @@ import { theme } from '@/assets/theme'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-      <ThemeProvider theme={theme}>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+            <App />
+        </ThemeProvider>
+      </Provider>
     </BrowserRouter>
 );

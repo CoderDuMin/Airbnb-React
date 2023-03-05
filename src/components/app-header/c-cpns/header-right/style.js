@@ -1,16 +1,19 @@
 import styled from "styled-components";
 
-export const HeadRightWrapper = styled.div`
-  width: 753px;
-  display: flex;
-  justify-content:flex-end;
 
-  color:${props => props.theme.text.primaryColor};
+export const RightWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  color: ${props => props.theme.text.primaryColor};
   font-weight: 600;
 
-  .btns{
+  .btns {
     display: flex;
     box-sizing: content-box;
+    color: ${props => props.theme.isAlpha ? "#fff": props.theme.text.primaryColor};
 
     .btn {
       height: 18px;
@@ -21,7 +24,7 @@ export const HeadRightWrapper = styled.div`
       box-sizing: content-box;
 
       &:hover {
-        background-color: #f5f5f5;
+        background-color: ${props => props.theme.isAlpha ? "rgba(255,255,255,.1)": "#f5f5f5"};
       }
     }
   }
@@ -52,7 +55,6 @@ export const HeadRightWrapper = styled.div`
       border-radius: 10px;
       box-shadow: 0 0 6px rgba(0,0,0,.2);
       color: #666;
-      font-weight: 400;
 
       .top, .bottom {
         padding: 10px 0;
@@ -64,7 +66,6 @@ export const HeadRightWrapper = styled.div`
 
           &:hover {
             background-color: #f5f5f5;
-            font-weight: 600;
           }
         }
       }

@@ -29,7 +29,7 @@ const Home = memo(() => {
     dispatch(fetchHomePriceInfoAction())
   },[dispatch])
   useEffect(() => {
-    dispatch(changeHeaderConfigAction({isFixed:true}))
+    dispatch(changeHeaderConfigAction({isFixed:true,topAlpha:true}))
   },[dispatch])
 
   return (
