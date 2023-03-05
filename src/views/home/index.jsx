@@ -43,7 +43,6 @@ const Home = memo(() => {
         {isEmptyO(highScoreInfo) && <HomeSectionV1 homeInfo={highScoreInfo} />}
         {isEmptyO(plusInfo) && <HomeSectionV3 plusInfo={plusInfo} />}
       </div>
-      <Button variant="contained">Hello World</Button>
     </HomeWrapper>
   )
 })
