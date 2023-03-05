@@ -6,6 +6,7 @@ export const PictureBrowserWrapper = styled.div`
   right: 0;
   top: 0;
   bottom: 0;
+  z-index:99;
   background-color: rgba(0,0,0,.85);
 
   display: flex;

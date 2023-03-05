@@ -1,6 +1,6 @@
 import React, { memo, useEffect } from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux'
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 
 import { HomeWrapper } from './style'
 import HomeBanner from './c-cpns/home-banner'
